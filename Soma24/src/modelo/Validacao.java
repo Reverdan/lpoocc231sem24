@@ -18,7 +18,7 @@ public class Validacao
         }
         catch (Exception e)
         {
-            mensagem = "Números inválidos";
+            mensagem = "Digite números válidos";
         }
     }
 }
