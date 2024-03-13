@@ -38,13 +38,16 @@ public class frmPrincipal extends javax.swing.JDialog
         lblResultado = new javax.swing.JLabel();
         lblPrimeiroNumero = new javax.swing.JLabel();
         lblSegundoNumero = new javax.swing.JLabel();
+        btnSubtrair = new javax.swing.JButton();
+        btnMultiplicar = new javax.swing.JButton();
+        btnDividir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Soma");
 
         txfPrimeiroNumero.setName(""); // NOI18N
 
-        btnSomar.setText("Somar");
+        btnSomar.setText("+");
         btnSomar.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -59,25 +62,59 @@ public class frmPrincipal extends javax.swing.JDialog
 
         lblSegundoNumero.setText("Digite o Segundo número");
 
+        btnSubtrair.setText("-");
+        btnSubtrair.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnSubtrairActionPerformed(evt);
+            }
+        });
+
+        btnMultiplicar.setText("x");
+        btnMultiplicar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnMultiplicarActionPerformed(evt);
+            }
+        });
+
+        btnDividir.setText("/");
+        btnDividir.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnDividirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(btnSomar))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblSegundoNumero)
+                            .addComponent(txfPrimeiroNumero, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                            .addComponent(txfSegundoNumero, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnMultiplicar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnSomar, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnSubtrair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnDividir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(45, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPrimeiroNumero)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txfPrimeiroNumero)
-                                .addComponent(lblResultado, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txfSegundoNumero, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE))
-                            .addComponent(lblSegundoNumero))))
-                .addContainerGap(34, Short.MAX_VALUE))
+                            .addComponent(lblResultado)
+                            .addComponent(lblPrimeiroNumero))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,9 +127,15 @@ public class frmPrincipal extends javax.swing.JDialog
                 .addComponent(lblSegundoNumero)
                 .addGap(1, 1, 1)
                 .addComponent(txfSegundoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(btnSomar)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSomar)
+                    .addComponent(btnSubtrair))
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMultiplicar)
+                    .addComponent(btnDividir))
+                .addGap(18, 18, 18)
                 .addComponent(lblResultado)
                 .addContainerGap(29, Short.MAX_VALUE))
         );
@@ -101,11 +144,12 @@ public class frmPrincipal extends javax.swing.JDialog
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSomarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSomarActionPerformed
-    {//GEN-HEADEREND:event_btnSomarActionPerformed
+    public void calcular(String op)
+    {
         Controle controle = new Controle();
         controle.num1 = txfPrimeiroNumero.getText();
         controle.num2 = txfSegundoNumero.getText();
+        controle.op = op;
         controle.executar();
         if (controle.mensagem.equals(""))
         {
@@ -115,7 +159,28 @@ public class frmPrincipal extends javax.swing.JDialog
         {
             lblResultado.setText(controle.mensagem);
         }
+    }
+    
+    
+    private void btnSomarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSomarActionPerformed
+    {//GEN-HEADEREND:event_btnSomarActionPerformed
+        this.calcular("+");
     }//GEN-LAST:event_btnSomarActionPerformed
+
+    private void btnMultiplicarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnMultiplicarActionPerformed
+    {//GEN-HEADEREND:event_btnMultiplicarActionPerformed
+        this.calcular("*");
+    }//GEN-LAST:event_btnMultiplicarActionPerformed
+
+    private void btnSubtrairActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSubtrairActionPerformed
+    {//GEN-HEADEREND:event_btnSubtrairActionPerformed
+        this.calcular("-");
+    }//GEN-LAST:event_btnSubtrairActionPerformed
+
+    private void btnDividirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnDividirActionPerformed
+    {//GEN-HEADEREND:event_btnDividirActionPerformed
+        this.calcular("/");
+    }//GEN-LAST:event_btnDividirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,7 +241,10 @@ public class frmPrincipal extends javax.swing.JDialog
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDividir;
+    private javax.swing.JButton btnMultiplicar;
     private javax.swing.JButton btnSomar;
+    private javax.swing.JButton btnSubtrair;
     private javax.swing.JLabel lblPrimeiroNumero;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblSegundoNumero;
