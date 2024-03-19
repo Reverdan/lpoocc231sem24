@@ -2,28 +2,18 @@ package modelo;
 
 public class Controle
 {
-    public String num1;
-    public String num2;
-    public String op;
     public String mensagem; 
     public String resultado;
     
-    public void Executar()
+    public void Executar(String num1, String num2, String op)
     {
         this.mensagem = "";
         Validacao validacao = new Validacao();
-        validacao.num1 = this.num1;
-        validacao.num2 = this.num2;
-        validacao.op = this.op;
-        validacao.Validar();
+        validacao.Validar(num1, num2, op);
         if (validacao.mensagem.equals(""))
         {
             Calculos calculos = new Calculos();
-            calculos.n1 = validacao.n1;
-            calculos.n2 = validacao.n2;
-            calculos.op = this.op;
-            calculos.Calcular();
-            this.resultado = calculos.resposta.toString();
+            this.resultado = calculos.Calcular(validacao.n1, validacao.n2, op).toString();
         }
         else
         {

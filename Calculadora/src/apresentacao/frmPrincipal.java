@@ -140,10 +140,8 @@ public class frmPrincipal extends javax.swing.JDialog
     private void Calcular(String op)
     {
         Controle controle = new Controle();
-        controle.num1 = txfPrimeiroNumero.getText();
-        controle.num2 = txfSegundoNumero.getText();
-        controle.op = op;
-        controle.Executar();
+        controle.Executar(txfPrimeiroNumero.getText(), 
+                txfSegundoNumero.getText(), op);
         if (controle.mensagem.equals(""))
             lblResultado.setText(controle.resultado);
         else
