@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Calculadora">
+  <ClassDiagramComponents>
+    <Class name="frmPrincipal" package="apresentacao" visibility="public" xPosition="80.0" yPosition="456.0">
+      <Fields>
+        <Field name="btnDividir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnMultiplicar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSomar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSubtrair" type="javax.swing.JButton" visibility="private"/>
+        <Field name="lblPrimeiroNumero" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblResultado" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblSegundoNumero" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txfPrimeiroNumero" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txfSegundoNumero" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="java.awt.Frame" name="parent"/>
+          <Argument type="boolean" name="modal"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="Calcular" returnType="void" visibility="private">
+          <Argument type="String" name="op"/>
+        </Method>
+        <Method name="btnSomarActionPerformed" returnType="//GEN-FIRST:event_btnSomarActionPerformed void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnSubtrairActionPerformed" returnType="//GEN-FIRST:event_btnSubtrairActionPerformed void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnMultiplicarActionPerformed" returnType="//GEN-FIRST:event_btnMultiplicarActionPerformed void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnDividirActionPerformed" returnType="//GEN-FIRST:event_btnDividirActionPerformed void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Calculadora" package="calculadora" visibility="public" xPosition="308.0" yPosition="900.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Calculos" package="modelo" visibility="public" xPosition="80.0" yPosition="39.0">
+      <Fields>
+        <Field name="n1" type="Integer" visibility="public"/>
+        <Field name="n2" type="Integer" visibility="public"/>
+        <Field name="resposta" type="Integer" visibility="public"/>
+        <Field name="op" type="String" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Calcular" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Controle" package="modelo" visibility="public" xPosition="343.0" yPosition="204.0">
+      <Fields>
+        <Field name="num1" type="String" visibility="public"/>
+        <Field name="num2" type="String" visibility="public"/>
+        <Field name="op" type="String" visibility="public"/>
+        <Field name="mensagem" type="String" visibility="public"/>
+        <Field name="resultado" type="String" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Executar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Validacao" package="modelo" visibility="public" xPosition="594.0" yPosition="39.0">
+      <Fields>
+        <Field name="num1" type="String" visibility="public"/>
+        <Field name="num2" type="String" visibility="public"/>
+        <Field name="op" type="String" visibility="public"/>
+        <Field name="mensagem" type="String" visibility="public"/>
+        <Field name="n1" type="int" visibility="public"/>
+        <Field name="n2" type="int" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Validar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="" source="modelo.Controle" target="modelo.Validacao" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="modelo.Controle" target="modelo.Calculos" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="calculadora.Calculadora" target="apresentacao.frmPrincipal" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="apresentacao.frmPrincipal" target="modelo.Controle" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
