@@ -3,7 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="Soma"/>
+    <Property name="title" type="java.lang.String" value="Calculadora"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -25,70 +25,67 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="33" pref="33" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="lblResultado" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="lblSegundoNumero" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txfPrimeiroNumero" alignment="1" pref="142" max="32767" attributes="0"/>
-                          <Component id="txfSegundoNumero" alignment="1" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="btnMultiplicar" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnSomar" alignment="0" pref="60" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnSubtrair" max="32767" attributes="0"/>
-                                  <Component id="btnDividir" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="45" max="32767" attributes="0"/>
+                      <Component id="btnMultiplicar" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnDividir" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblResultado" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPrimeiroNumero" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="btnSomar" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnSubtrair" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="lblSegundoNumero" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPrimeiroNumero" min="-2" max="-2" attributes="0"/>
+                  <Component id="txfPrimeiroNumero" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txfSegundoNumero" alignment="0" max="32767" attributes="0"/>
               </Group>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Component id="lblPrimeiroNumero" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="txfPrimeiroNumero" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="lblSegundoNumero" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="txfSegundoNumero" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnSomar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnSubtrair" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnMultiplicar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnDividir" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Component id="lblResultado" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="txfPrimeiroNumero">
+    <Component class="javax.swing.JLabel" name="lblPrimeiroNumero">
       <Properties>
-        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="Digite o primeiro n&#xfa;mero"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txfPrimeiroNumero">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblSegundoNumero">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Digite o segundo n&#xfa;mero"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txfSegundoNumero">
@@ -101,27 +98,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSomarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblResultado">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Resultado"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblPrimeiroNumero">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Digite o primeiro n&#xfa;mero"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblSegundoNumero">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Digite o Segundo n&#xfa;mero"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="btnSubtrair">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSubtrairActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnDividir">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="/"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDividirActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnMultiplicar">
@@ -132,13 +122,10 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMultiplicarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnDividir">
+    <Component class="javax.swing.JLabel" name="lblResultado">
       <Properties>
-        <Property name="text" type="java.lang.String" value="/"/>
+        <Property name="text" type="java.lang.String" value="Resultado"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDividirActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>

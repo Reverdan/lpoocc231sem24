@@ -1,7 +1,8 @@
-package soma24;
-import modelo.*;
+package calculadora;
 
-public class Soma24
+import apresentacao.frmPrincipal;
+
+public class Calculadora
 {
     public static void main(String[] args)
     {
@@ -9,4 +10,5 @@ public class Soma24
         frmP.setVisible(true);
         System.exit(0);
     }
+    
 }
