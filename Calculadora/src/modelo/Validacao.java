@@ -2,9 +2,9 @@ package modelo;
 
 public class Validacao
 {
-    public String mensagem;
-    public int n1;
-    public int n2;
+    private String mensagem;
+    private int n1;
+    private int n2;
     
     public void Validar(String num1, String num2, String op)
     {
@@ -21,4 +21,21 @@ public class Validacao
             this.mensagem = "Digite números válidos";
         }
     }
+
+    public String getMensagem()
+    {
+        return mensagem;
+    }
+
+    public int getN1()
+    {
+        return n1;
+    }
+
+    public int getN2()
+    {
+        return n2;
+    }
+   
+    
 }

@@ -10,14 +10,14 @@ public class Controle
         this.mensagem = "";
         Validacao validacao = new Validacao();
         validacao.Validar(num1, num2, op);
-        if (validacao.mensagem.equals(""))
+        if (validacao.getMensagem().equals(""))
         {
             Calculos calculos = new Calculos();
-            this.resultado = calculos.Calcular(validacao.n1, validacao.n2, op).toString();
+            this.resultado = calculos.Calcular(validacao.getN1(), validacao.getN2(), op).toString();
         }
         else
         {
-            this.mensagem = validacao.mensagem;
+            this.mensagem = validacao.getMensagem();
         }
     }
 }
