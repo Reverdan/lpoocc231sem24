@@ -5,14 +5,25 @@ public class Validacao
     private String mensagem;
     private int n1;
     private int n2;
+    private String num1;
+    private String num2;
+    private String op;
+
+    public Validacao(String num1, String num2, String op)
+    {
+        this.num1 = num1;
+        this.num2 = num2;
+        this.op = op;
+        this.Validar();
+    }
     
-    public void Validar(String num1, String num2, String op)
+    private void Validar()
     {
         this.mensagem = "";
         try
         {
-            this.n1 = Integer.parseInt(num1);
-            this.n2 = Integer.parseInt(num2);
+            this.n1 = Integer.parseInt(this.num1);
+            this.n2 = Integer.parseInt(this.num2);
             if (op.equals("/") && n2 == 0)
                 this.mensagem = "Divisão por zero";
         }

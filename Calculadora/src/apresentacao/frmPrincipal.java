@@ -139,13 +139,12 @@ public class frmPrincipal extends javax.swing.JDialog
 
     private void Calcular(String op)
     {
-        Controle controle = new Controle();
-        controle.Executar(txfPrimeiroNumero.getText(), 
+        Controle controle = new Controle(txfPrimeiroNumero.getText(), 
                 txfSegundoNumero.getText(), op);
-        if (controle.mensagem.equals(""))
-            lblResultado.setText(controle.resultado);
+        if (controle.getMensagem().equals(""))
+            lblResultado.setText(controle.getResultado());
         else
-            lblResultado.setText(controle.mensagem);
+            lblResultado.setText(controle.getMensagem());
     }
     
     private void btnSomarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSomarActionPerformed

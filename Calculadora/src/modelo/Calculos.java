@@ -2,13 +2,31 @@ package modelo;
 
 public class Calculos
 {
+    private Integer n1;
+    private Integer n2;
+    private String op;
+    private Integer resposta;
     
-    public Integer Calcular(Integer n1, Integer n2, String op)
+    public Calculos(int n1, int n2, String op)
     {
-        if (op.equals("+")) return n1 + n2;
-        if (op.equals("-")) return n1 - n2;
-        if (op.equals("*")) return n1 * n2;
-        if (op.equals("/")) return n1 / n2;
-        return 0;
+        this.n1 = n1;
+        this.n2 = n2;
+        this.op = op;
+        this.Calcular();
     }
+    
+    public void Calcular()
+    {
+        if (this.op.equals("+")) this.resposta =  n1 + n2;
+        if (this.op.equals("-")) this.resposta =  n1 - n2;
+        if (this.op.equals("*")) this.resposta =  n1 * n2;
+        if (this.op.equals("/")) this.resposta =  n1 / n2;
+    }
+
+    public Integer getResposta()
+    {
+        return resposta;
+    }
+    
+    
 }
