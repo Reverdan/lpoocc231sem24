@@ -40,6 +40,13 @@ public class frmPrincipal extends javax.swing.JDialog
         lblResposta.setText("Resposta");
 
         btnVerificaPrimo.setText("Verifica Primo");
+        btnVerificaPrimo.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnVerificaPrimoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,6 +75,15 @@ public class frmPrincipal extends javax.swing.JDialog
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVerificaPrimoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnVerificaPrimoActionPerformed
+    {//GEN-HEADEREND:event_btnVerificaPrimoActionPerformed
+        modelo.Controle controle = new modelo.Controle(txfNumero.getText());
+        if (controle.getMensagem().equals(""))
+            lblResposta.setText(controle.getResposta());
+        else
+            lblResposta.setText(controle.getMensagem());
+    }//GEN-LAST:event_btnVerificaPrimoActionPerformed
 
     /**
      * @param args the command line arguments
