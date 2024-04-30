@@ -1,8 +1,6 @@
 package modelo;
 
-import java.util.Objects;
-
-public abstract class AbsPropriedades
+public abstract class AbsPropriedades implements IMetodos
 {
     public String lado1;
     public String lado2;
@@ -18,6 +16,7 @@ public abstract class AbsPropriedades
         this.lado1 = lado1;
         this.lado2 = lado2;
         this.lado3 = lado3;
+        this.Executar();
     }
 
     public AbsPropriedades(Double l1, Double l2, Double l3)
@@ -25,7 +24,10 @@ public abstract class AbsPropriedades
         this.l1 = l1;
         this.l2 = l2;
         this.l3 = l3;
+        this.Executar();
     }
+    
+    
     
     
       

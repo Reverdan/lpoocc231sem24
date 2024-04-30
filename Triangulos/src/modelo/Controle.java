@@ -6,12 +6,10 @@ public class Controle extends AbsPropriedades
     public Controle(String lado1, String lado2, String lado3)
     {
         super(lado1, lado2, lado3);
-        this.Executar();
     }
-
-
     
-    private void Executar()
+    @Override
+    public void Executar()
     {
         this.mensagem = "";
         Validacao validacao = new Validacao(lado1, lado2, lado3);
