@@ -11,12 +11,15 @@ public class CalculoFatorial extends AbsPropriedades
     @Override
     public void Executar()
     {
+        int base = num;
+        for(int i = 1; i < base; i++)
+            num *= i;
     }
 
     @Override
     public String toString()
     {
-        return "CalculoFatorial{" + '}';
+        return num.toString();
     }
     
     
