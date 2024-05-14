@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="TemperaturaK">
+  <ClassDiagramComponents>
+    <Class name="frmPrincipal" package="Apresentacao" visibility="public" xPosition="47.0" yPosition="574.0">
+      <Fields>
+        <Field name="btgTemperatura" type="javax.swing.ButtonGroup" visibility="private"/>
+        <Field name="btnConverter" type="javax.swing.JButton" visibility="private"/>
+        <Field name="lblResposta" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblTemperatura" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txfTemperatura" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="java.awt.Frame" name="parent"/>
+          <Argument type="boolean" name="modal"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnConverterActionPerformed" returnType="//GEN-FIRST:event_btnConverterActionPerformed void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="absPropriedades" package="Modelo" visibility="public" isAbstract="true" xPosition="469.0" yPosition="20.0">
+      <Fields>
+        <Field name="temperatura" type="String" visibility="public"/>
+        <Field name="valor" type="Double" visibility="public"/>
+        <Field name="resposta" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="temperatura"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Double" name="valor"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Controle" package="Modelo" visibility="public" xPosition="528.0" yPosition="387.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="temperatura"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="Executar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Estaticos" package="Modelo" visibility="public" xPosition="47.0" yPosition="20.0">
+      <Fields>
+        <Field name="MENSAGEM" type="String" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Kelvin" package="Modelo" visibility="public" xPosition="47.0" yPosition="178.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Double" name="valor"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="Executar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Validacao" package="Modelo" visibility="public" xPosition="47.0" yPosition="354.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="temperatura"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="Executar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Temperatura" package="temperatura" visibility="public" xPosition="47.0" yPosition="886.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="IMetodos" package="Modelo" visibility="public" xPosition="255.0" yPosition="20.0">
+      <Methods>
+        <Method name="Executar" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Modelo.Kelvin" target="Modelo.absPropriedades"/>
+    <UseRelation name="" source="Apresentacao.frmPrincipal" target="Modelo.Controle" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Modelo.absPropriedades" target="Modelo.IMetodos"/>
+    <UseRelation name="" source="temperatura.Temperatura" target="Apresentacao.frmPrincipal" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Modelo.Validacao" target="Modelo.absPropriedades"/>
+    <UseRelation name="" source="Modelo.Controle" target="Modelo.absPropriedades" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Modelo.Controle" target="Modelo.absPropriedades"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
